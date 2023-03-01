@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition States &#8212; autodE  documentation</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Thermochemistry" href="thermochem.html" />
+    <link rel="prev" title="RMSD" href="rmsd.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">autodE  documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../install.html">
+   Install
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../quickstart.html">
+   Quick Start
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../config.html">
+   Configuration
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../reference/index.html">
+   Reference
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/atoms.html">
+     Atoms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/bonds.html">
+     Bonds
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/calculation.html">
+     Calculation
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/conformers/index.html">
+     Conformers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/conformers/conf_gen.html">
+       Conf Gen
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/conformers/conformer.html">
+       Conformer
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/conformers/conformers.html">
+       Conformers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/pes/index.html">
+     PES
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/pes/pes.html">
+       Potential Energy Surfaces
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/pes/mep.html">
+       Min Energy Pathway
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/reactions/index.html">
+     Reactions
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+    <label for="toctree-checkbox-4">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/reactions/multistep.html">
+       Multistep Reaction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/reactions/reaction.html">
+       Reaction
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/reactions/reaction_types.html">
+       Reaction Types
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/smiles/index.html">
+     SMILES
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+    <label for="toctree-checkbox-5">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/smiles/smiles.html">
+       Molecules from SMILES
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/smiles/parser.html">
+       SMILES Parser
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/smiles/builder.html">
+       3D Geometry Builder
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/smiles/atom_types.html">
+       SMILES Atom Types
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/smiles/angles.html">
+       SMILES Angles
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/smiles/base.html">
+       SMILES Base
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/solvent/index.html">
+     Solvent
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+    <label for="toctree-checkbox-6">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/solvent/solvents.html">
+       Solvents
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/solvent/explicit_solvent.html">
+       Explicit Solvent
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/species/index.html">
+     Species
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+    <label for="toctree-checkbox-7">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/species/complex.html">
+       Complex
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/species/molecule.html">
+       Molecule
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/species/species.html">
+       Species
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/neb/index.html">
+     Nudged elastic band
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+    <label for="toctree-checkbox-8">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/neb/neb.html">
+       NEB Transition states
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/neb/original.html">
+       Original NEB
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/neb/ci.html">
+       Climbing image NEB
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/neb/idpp.html">
+       Image dependent pair potential
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/transition_states/index.html">
+     Transition States
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+    <label for="toctree-checkbox-9">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/transition_states/base.html">
+       Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/transition_states/locate_tss.html">
+       Locate TSs
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/transition_states/templates.html">
+       Templates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/transition_states/transition_state.html">
+       Transition State
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/transition_states/truncation.html">
+       Truncation
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/transition_states/ts_guess.html">
+       TS Guess
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/thermochemistry/index.html">
+     Thermochemistry
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+    <label for="toctree-checkbox-10">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/thermochemistry/igm.html">
+       Ideal gas model
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/thermochemistry/symmetry.html">
+       Symmetry
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/wrappers/index.html">
+     Wrappers
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+    <label for="toctree-checkbox-11">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/wrappers/base.html">
+       Base
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/wrappers/g09.html">
+       Gaussian09
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/wrappers/keywords.html">
+       Keywords
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/wrappers/mopac.html">
+       MOPAC
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/wrappers/nwchem.html">
+       NWChem
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/wrappers/orca.html">
+       ORCA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/wrappers/xtb.html">
+       XTB
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../reference/opt/index.html">
+     Optimisation
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+    <label for="toctree-checkbox-12">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/opt/coordinates.html">
+       Coordinates
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../reference/opt/optimisers.html">
+       Optimisers
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/bond_rearrangement.html">
+     Bond Rearrangement
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/config.html">
+     Configuration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/constants.html">
+     Constants
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/exceptions.html">
+     Exceptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/geom.html">
+     Geometry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/input_output.html">
+     Input Output
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/log.html">
+     Logging
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/methods.html">
+     Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/mol_graphs.html">
+     Molecular Graphs
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/plotting.html">
+     Plotting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/point_charges.html">
+     Point Charges
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/substitution.html">
+     Substitution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/units.html">
+     Units
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/utils.html">
+     Utilities
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/values.html">
+     Values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/hessians.html">
+     Hessians
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../troubleshooting.html">
+   Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="index.html">
+   Examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="species.html">
+     Species
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="molecules.html">
+     Molecules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reactions.html">
+     Reactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="nci.html">
+     Non-covalent Interaction Complexes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="manipulation.html">
+     Molecular Manipulation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pes1d.html">
+     1D PES Generation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="pes2d.html">
+     2D PES Generation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conformers.html">
+     Conformer Generation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="rmsd.html">
+     RMSD
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Transition States
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="thermochem.html">
+     Thermochemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../changelog.html">
+   Changelog
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../dev/index.html">
+   Development
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dev/overview.html">
+     Code Structure
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../dev/contributing.html">
+     Contributing to autodE
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../citation.html">
+   Citation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://doi.org/10.1002/anie.202011941">
+   Paper
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/examples/tss.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#default-reaction">
+   Default: Reaction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ci-neb">
+   CI-NEB
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Transition States</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#default-reaction">
+   Default: Reaction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ci-neb">
+   CI-NEB
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="section" id="transition-states">
+<h1>Transition States<a class="headerlink" href="#transition-states" title="Permalink to this headline">#</a></h1>
+<p>In addition to generating full reaction profiles directly <strong>autodE</strong> provides
+automated access to transition states (TSs). TSs are found either from a
+reaction, where bond rearrangements are found and TS located along each
+possible path, or from 3D structures of reactants &amp; products, and a given bond
+rearrangement.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Transition states have no check that the stereochemistry is correctly preserved.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="default-reaction">
+<h2>Default: Reaction<a class="headerlink" href="#default-reaction" title="Permalink to this headline">#</a></h2>
+<img alt="../_images/curtius.png" src="../_images/curtius.png" />
+<p>For a simple Curtius rearrangement copied as a SMILES string directly from
+Chemdraw<sup>TM</sup> (selecting reactants and products with arrows and ‘+’ then Edit-&gt;Copy As-&gt;SMILES)
+the TS can be located with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autode</span> <span class="k">as</span> <span class="nn">ade</span>
+
+<span class="n">ade</span><span class="o">.</span><span class="n">Config</span><span class="o">.</span><span class="n">n_cores</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="n">rxn</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Reaction</span><span class="p">(</span><span class="s2">&quot;CC(N=[N+]=[N-])=O&gt;&gt;CN=C=O.N#N&quot;</span><span class="p">)</span>
+<span class="n">rxn</span><span class="o">.</span><span class="n">locate_transition_state</span><span class="p">()</span>
+<span class="n">rxn</span><span class="o">.</span><span class="n">ts</span><span class="o">.</span><span class="n">print_xyz_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;ts.xyz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Out (visualised)</p>
+<a class="reference internal image-reference" href="../_images/curtius_ts.png"><img alt="../_images/curtius_ts.png" class="align-center" src="../_images/curtius_ts.png" style="width: 370px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="code docutils literal notranslate"><span class="pre">locate_transition_state</span></code> only locates a single transtion state for
+each possible bond rearrangment and does not attempt to search the conformational
+space.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ci-neb">
+<h2>CI-NEB<a class="headerlink" href="#ci-neb" title="Permalink to this headline">#</a></h2>
+<p>Minimum energy pathways can also be generated using nudged elastic band (NEB)
+calculations. To find the peak species suitable as a TS guess geometry for
+the prototypical Claisen rearrangement ([3,3]-sigmatropic rearrangement of
+allyl phenyl ether)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">autode</span> <span class="k">as</span> <span class="nn">ade</span>
+
+<span class="n">reac</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Reactant</span><span class="p">(</span><span class="s2">&quot;claisen_r.xyz&quot;</span><span class="p">)</span>
+<span class="n">prod</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">Product</span><span class="p">(</span><span class="s2">&quot;claisen_p.xyz&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create an 8 image nudged elastic band with intermediate images interpolated</span>
+<span class="c1"># from the final points, thus they must be structurally similar</span>
+<span class="n">neb</span> <span class="o">=</span> <span class="n">ade</span><span class="o">.</span><span class="n">neb</span><span class="o">.</span><span class="n">CINEB</span><span class="p">(</span><span class="n">initial_species</span><span class="o">=</span><span class="n">reac</span><span class="p">,</span> <span class="n">final_species</span><span class="o">=</span><span class="n">prod</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="c1"># minimise with XTB</span>
+<span class="n">neb</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="n">ade</span><span class="o">.</span><span class="n">methods</span><span class="o">.</span><span class="n">XTB</span><span class="p">(),</span> <span class="n">n_cores</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># print the geometry of the peak species</span>
+<span class="n">peak_species</span> <span class="o">=</span> <span class="n">neb</span><span class="o">.</span><span class="n">get_species_saddle_point</span><span class="p">()</span>
+<span class="n">peak_species</span><span class="o">.</span><span class="n">print_xyz_file</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;peak.xyz&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Out:</p>
+<a class="reference internal image-reference" href="../_images/claisen_neb_optimised.png"><img alt="../_images/claisen_neb_optimised.png" class="align-center" src="../_images/claisen_neb_optimised.png" style="width: 580px;" /></a>
+<p>Out (visualised):</p>
+<a class="reference internal image-reference" href="../_images/claisen_peak.png"><img alt="../_images/claisen_peak.png" class="align-center" src="../_images/claisen_peak.png" style="width: 300px;" /></a>
+<p>where the xyz files used are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span>
+<span class="n">claisen_r</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">3.98726</span>   <span class="mf">0.74520</span>  <span class="mf">0.45281</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">4.50106</span>  <span class="o">-</span><span class="mf">0.55204</span>  <span class="mf">0.38563</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">2.98263</span>   <span class="mf">1.15687</span> <span class="o">-</span><span class="mf">0.42991</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">2.51083</span>   <span class="mf">0.25840</span> <span class="o">-</span><span class="mf">1.40799</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">3.03021</span>  <span class="o">-</span><span class="mf">1.03906</span> <span class="o">-</span><span class="mf">1.47415</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">4.01895</span>  <span class="o">-</span><span class="mf">1.44546</span> <span class="o">-</span><span class="mf">0.57369</span>
+<span class="n">O</span>  <span class="o">-</span><span class="mf">2.47596</span>   <span class="mf">2.40755</span> <span class="o">-</span><span class="mf">0.27307</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">1.33638</span>   <span class="mf">2.94073</span> <span class="o">-</span><span class="mf">0.85085</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">1.73709</span>   <span class="mf">0.54678</span> <span class="o">-</span><span class="mf">2.10649</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">2.65792</span>  <span class="o">-</span><span class="mf">1.73268</span> <span class="o">-</span><span class="mf">2.21661</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">4.41017</span>  <span class="o">-</span><span class="mf">2.45344</span> <span class="o">-</span><span class="mf">0.61689</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">4.35505</span>   <span class="mf">1.42777</span>  <span class="mf">1.20883</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">5.26464</span>  <span class="o">-</span><span class="mf">0.86554</span>  <span class="mf">1.08531</span>
+<span class="n">C</span>  <span class="o">-</span><span class="mf">0.04683</span>   <span class="mf">2.27939</span> <span class="o">-</span><span class="mf">0.39973</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">1.28052</span>   <span class="mf">4.00673</span> <span class="o">-</span><span class="mf">0.54623</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">1.40915</span>   <span class="mf">2.91149</span> <span class="o">-</span><span class="mf">1.95905</span>
+<span class="n">C</span>   <span class="mf">0.04395</span>   <span class="mf">1.20681</span>  <span class="mf">0.40079</span>
+<span class="n">H</span>   <span class="mf">0.87953</span>   <span class="mf">2.71662</span> <span class="o">-</span><span class="mf">0.75770</span>
+<span class="n">H</span>  <span class="o">-</span><span class="mf">0.81785</span>   <span class="mf">0.69435</span>  <span class="mf">0.80686</span>
+<span class="n">H</span>   <span class="mf">1.01980</span>   <span class="mf">0.81060</span>  <span class="mf">0.65942</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">20</span>
+<span class="n">claisen_p</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">4.34571</span>   <span class="mf">0.63520</span>   <span class="mf">0.57310</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">4.49777</span>  <span class="o">-</span><span class="mf">0.68069</span>   <span class="mf">0.34490</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">3.23250</span>   <span class="mf">1.40679</span>   <span class="mf">0.03037</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">2.22119</span>   <span class="mf">0.64743</span>  <span class="o">-</span><span class="mf">0.81975</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">2.49978</span>  <span class="o">-</span><span class="mf">0.80349</span>  <span class="o">-</span><span class="mf">0.98985</span> 
+<span class="n">C</span>   <span class="o">-</span><span class="mf">3.56127</span>  <span class="o">-</span><span class="mf">1.41597</span>  <span class="o">-</span><span class="mf">0.45542</span> 
+<span class="n">O</span>   <span class="o">-</span><span class="mf">3.11541</span>   <span class="mf">2.59776</span>   <span class="mf">0.24431</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">0.59568</span>   <span class="mf">3.13650</span>  <span class="o">-</span><span class="mf">1.35460</span>
+<span class="n">H</span>   <span class="o">-</span><span class="mf">2.24578</span>   <span class="mf">1.10277</span>  <span class="o">-</span><span class="mf">1.81941</span>
+<span class="n">H</span>   <span class="o">-</span><span class="mf">1.78329</span>  <span class="o">-</span><span class="mf">1.35547</span>  <span class="o">-</span><span class="mf">1.58358</span> 
+<span class="n">H</span>   <span class="o">-</span><span class="mf">3.73211</span>  <span class="o">-</span><span class="mf">2.47147</span>  <span class="o">-</span><span class="mf">0.60583</span> 
+<span class="n">H</span>   <span class="o">-</span><span class="mf">5.04256</span>   <span class="mf">1.18717</span>   <span class="mf">1.18701</span>
+<span class="n">H</span>   <span class="o">-</span><span class="mf">5.33408</span>  <span class="o">-</span><span class="mf">1.21816</span>   <span class="mf">0.77022</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">0.15430</span>   <span class="mf">2.17960</span>  <span class="o">-</span><span class="mf">0.56309</span>
+<span class="n">H</span>   <span class="o">-</span><span class="mf">0.03493</span>   <span class="mf">4.04448</span>  <span class="o">-</span><span class="mf">1.49486</span>
+<span class="n">H</span>   <span class="o">-</span><span class="mf">1.53872</span>   <span class="mf">3.08831</span>  <span class="o">-</span><span class="mf">1.87085</span>
+<span class="n">C</span>   <span class="o">-</span><span class="mf">0.79076</span>   <span class="mf">0.85415</span>  <span class="o">-</span><span class="mf">0.27213</span>
+<span class="n">H</span>    <span class="mf">0.79501</span>   <span class="mf">2.30610</span>  <span class="o">-</span><span class="mf">0.05582</span>
+<span class="n">H</span>   <span class="o">-</span><span class="mf">0.80710</span>   <span class="mf">0.70442</span>   <span class="mf">0.81159</span>
+<span class="n">H</span>   <span class="o">-</span><span class="mf">0.14130</span>   <span class="mf">0.07563</span>  <span class="o">-</span><span class="mf">0.68902</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NEBs initialised from end points use linear interpolation then an image
+independent pair potential to relax the initial linear path, following
+<a class="reference external" href="https://arxiv.org/abs/1406.1512">this paper</a>.</p>
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="rmsd.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">RMSD</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="thermochem.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Thermochemistry</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Tom Young, Joseph Silcock<br/>
+  
+      &copy; Copyright 2020-2021, Tom Young, Joseph Silcock.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
